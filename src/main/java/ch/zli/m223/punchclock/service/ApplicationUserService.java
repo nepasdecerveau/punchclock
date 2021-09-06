@@ -42,5 +42,7 @@ public class ApplicationUserService implements UserDetailsService {
 
     public List<ApplicationUser> getAllUsers() {return applicationUserRepository.findAll();}
 
+    public void deleteUser(long id){applicationUserRepository.deleteById(id);}
+
 
 }
