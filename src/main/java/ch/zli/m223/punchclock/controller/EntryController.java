@@ -4,6 +4,7 @@ import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.domain.EntryCreate;
 import ch.zli.m223.punchclock.service.DepartmentService;
 import ch.zli.m223.punchclock.service.EntryService;
+import ch.zli.m223.punchclock.service.ProjectService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,10 +16,12 @@ import java.util.List;
 public class EntryController {
     private EntryService entryService;
     private DepartmentService departmentService;
+    private ProjectService projectService;
 
-    public EntryController(EntryService entryService, DepartmentService departmentService) {
+    public EntryController(EntryService entryService, DepartmentService departmentService, ProjectService projectService) {
         this.entryService = entryService;
         this.departmentService = departmentService;
+        this.projectService = projectService;
     }
 
     @DeleteMapping(value ="/{id}")
@@ -40,6 +43,7 @@ public class EntryController {
         entry.setCheckIn(entryCreate.getCheckIn());
         entry.setCheckOut(entryCreate.getCheckOut());
         entry.setDepartment(departmentService.findById(entryCreate.getDepartmentId()).get());
+        entry.setProject(projectService.getById(entryCreate.getProjectId()).get());
 
         return entryService.createEntry(entry);
     }

@@ -28,6 +28,9 @@ public class Entry {
     @ManyToOne(optional = false)
     private Department department;
 
+    @ManyToOne(optional = false)
+    private Project project;
+
     public Long getId() {
         return id;
     }
@@ -58,5 +61,13 @@ public class Entry {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 }

@@ -18,6 +18,9 @@ public class Department {
     @JsonIgnore
     private List<Entry> entries;
 
+    @OneToMany(mappedBy = "department")
+    private List<Project> projects;
+
     public Department(){}
 
     public Long getId() {
@@ -42,5 +45,13 @@ public class Department {
 
     public void setEntries(List<Entry> entries) {
         this.entries = entries;
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
     }
 }

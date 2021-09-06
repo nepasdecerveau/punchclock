@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProjectService {
@@ -19,4 +20,6 @@ public class ProjectService {
     public void deleteProject(long id){projectRepository.deleteById(id);}
 
     public List<Project> findAll(){return projectRepository.findAll();}
+
+    public Optional<Project> getById(long id) {return projectRepository.findById(id);}
 }

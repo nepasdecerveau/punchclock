@@ -7,6 +7,7 @@ public class EntryCreate {
     private LocalDateTime checkIn;
     private LocalDateTime checkOut;
     private long departmentId;
+    private long projectId;
 
     public long getId() {
         return id;
@@ -38,5 +39,13 @@ public class EntryCreate {
 
     public void setDepartmentId(long departmentId) {
         this.departmentId = departmentId;
+    }
+
+    public long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(long projectId) {
+        this.projectId = projectId;
     }
 }
