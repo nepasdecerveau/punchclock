@@ -47,4 +47,17 @@ public class EntryController {
 
         return entryService.createEntry(entry);
     }
+
+    @PutMapping
+    public void updateEntry(@Valid @RequestBody EntryCreate entryCreate){
+        Entry entry = new Entry();
+
+        entry.setId(entryCreate.getId());
+        entry.setCheckIn(entryCreate.getCheckIn());
+        entry.setCheckOut(entryCreate.getCheckOut());
+        entry.setDepartment(departmentService.findById(entryCreate.getDepartmentId()).get());
+        entry.setProject(projectService.getById(entryCreate.getProjectId()).get());
+
+        entryService.updateEntry(entry);
+    }
 }

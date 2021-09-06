@@ -1,5 +1,14 @@
 # M223: Punchclock
-Dies ist eine Beispielapplikation für das Modul M223.
+Dies ist ein ÜK Projekt, bei welchem man sich ein und aus stempeln kann.
+
+Als erstes wird ein SignUp benötigt, damit man sich im Programm anmelden kann.
+
+Nachdem SignUp kann man zurück auf die Login Seite und sich anmelden.
+
+Danach wird man weitergeleitet, wo man die StempelUhr mit den Abteilungen und Projekt sieht, wo man das gewünschte Projekt auswählt.
+
+Man kann die Falschen entries, wenn dies notwendig ist Löschen.
+
 
 ## Loslegen
 Folgende Schritte befolgen um loszulegen:
